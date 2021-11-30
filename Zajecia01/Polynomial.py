@@ -27,15 +27,14 @@ class Polynomial:
 
         self.__k1 = k1
 
-    # Robimy getter jako metode property
+    # getter
     @property
     def coefficients(self):
         coefficients = []
         for i in range(len(self.__k1)):
             coefficients.append(self.__k1[i])
 
-        # Zeby nie dalo sie dopisac nic XD Tak sie robi immutable liste
-        # az sie zdziwilem ze zadzialalo
+        # immutable list
         return list(tuple(self.__k1))
 
     def __add__(self, p2):
@@ -64,7 +63,7 @@ class Polynomial:
         # Radzimy sobie z liczbami...
         # Ale skaldnia musi byc "Poly + liczba"
         # "liczba + Poly" nie dziala, bo np. INT nie ma takiej metody w swojej klasie... <- (*odsylacz*)
-        # int.__add__(Polynomial(...)) - zeby dzialalo trzebaby zmienic wbudowane dodawanie...
+        # int.__add__(Polynomial(...)) - zeby dzialalo trzebaby zmienic wbudowane dodawanie integerów...
         elif isinstance(self, Polynomial) ^ isinstance(p2, Polynomial):
             liczba, wielomian = p2, self
             [p3.append(i) for i in wielomian.__k1]
@@ -74,7 +73,7 @@ class Polynomial:
         # w pozostalych dzialaniach tez nie bedzie
 
     def __iadd__(self, p2):
-        # to ma być " += "
+        
         if isinstance(self, Polynomial) and isinstance(p2, Polynomial):
             iteracja = 0
 
@@ -151,7 +150,7 @@ class Polynomial:
             return Polynomial(p3[::-1])
 
     def __imul__(self, p2):
-        # to jest operacja *=
+        
         if isinstance(self, Polynomial) and isinstance(p2, Polynomial):
             if len(self.__k1) - len(p2.__k1) >= 0:
                 # self jest dluzszy
@@ -226,7 +225,7 @@ class Polynomial:
             return Polynomial(p3[::-1])
 
     def __isub__(self, p2):
-        # to ma być " -= "
+        
 
         if isinstance(self, Polynomial) and isinstance(p2, Polynomial):
             iteracja = 0
@@ -299,7 +298,7 @@ class Polynomial:
 
             for j in range(len(wynik)):
                 nowa[j] = wynik[-j-1]
-            ######print(nowa)
+            
             zapis_wielomianu = ""
             for elt in range(len(nowa)):
                 if nowa[elt] == " 0 ":
@@ -325,5 +324,3 @@ if __name__ == "__main__":
 # Ma dodawac tez liczby
 # Juz operuje rowniez na liczbach
 # Prawie potrafi mnozyc Polynomial * String - ale to niezamierzona funkcjonalnosc
-
-# wyslac na dgront@chem.uw.edu.pl
