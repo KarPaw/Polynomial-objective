@@ -1,0 +1,19 @@
+- Bez columba
+- wylaczona objetosc
+
+Energia
+Harmonic(energia)
+Repulsion(energia)
+
+Coords {
+# wczytuje z pliku, tworzy atomy.
+* iteracja po atomach
+
+}
+Atom {
+
+}
+Klasa: Monte Carlo
+
+
+Warunki brzegowe; 
