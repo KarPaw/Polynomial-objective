@@ -40,6 +40,7 @@ class Polynomial:
     def __add__(self, p2):
         # Ta metoda jest dobrze opisana, jest tu sporo komentarzy wyjasniajacych rzeczy
         # ktore moga byc niejasne w innych miejscach
+
         p3 = []
         if isinstance(self, Polynomial) and isinstance(p2, Polynomial):
             iteracja = 0
@@ -307,6 +308,9 @@ class Polynomial:
                     zapis_wielomianu += nowa[elt]
 
         return zapis_wielomianu
+
+    def nowa_metoda(pierwszy, drugi, trzeci):
+        pass
 
 
 if __name__ == "__main__":
